@@ -1,0 +1,99 @@
+:root {
+  /*renkler */
+  --background-color: #292929;
+  --seat-color: #444451;
+  --reserve-color: #fff;
+  --select-color: #f6eb6f;
+  --screen-color: #fff;
+  --info-box-background-color: rgba(0, 0, 0, 0.2);
+  --info-box-text-color: #777;
+
+  /*Koltuk Boyutları */
+  --seat-width: 15px;
+  --seat-height: 15px;
+
+  /*Ekran Boyutları*/
+  --screen-width: 100%;
+  --screen-height: 50px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+.wrapper-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.seat {
+  width: var(--seat-width);
+  height: var(--seat-height);
+  background-color: var(--seat-color);
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.seat:not(.reserve):hover {
+  cursor: pointer;
+  transform: scale(1.3);
+  transition: all .2s;
+}
+
+.seat.select {
+  background-color: var(--select-color);
+}
+.seat.reserve {
+  background-color: var(--reserve-color);
+}
+
+.seat:nth-child(2) {
+  margin-right: 20px;
+}
+
+.seat:nth-last-child(3) {
+  margin-right: 20px;
+}
+
+.row {
+  display: flex;
+}
+
+.screen {
+  background-color: var(--screen-color);
+  height: var(--screen-height);
+  width: var(--screen-width);
+  margin: 20px 0;
+  box-shadow: 0 3px 8px rgba(255, 255, 255, 0.7);
+}
+
+.movie-list {
+  margin: 20px 0;
+}
+
+.info-box {
+  background-color: var(--info-box-background-color);
+  display: flex;
+  color: var(--info-box-text-color);
+  padding: 5px 10px;
+}
+
+.info-box li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.price-info span {
+  color: var(--select-color);
+}
